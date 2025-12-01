@@ -1,0 +1,10 @@
+# Ignore the objects
+*.o
+
+# Ignore executables
+*.exe
+*.out
+main
+
+# Ignore file system
+.DS_Store
