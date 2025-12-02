@@ -9,6 +9,21 @@ struct system {
     double time;
 };
 
+/**********************************************************/
+/*                    MEMORY MANAGMENT                    */
+/**********************************************************/
+
+/* 
+*    Allocate the necessary memory needed. Return 0 if
+*    successfull, -1 is an error occurred
+*/
+short InitializeSystem(struct system *sys, const short dim,
+                       const short num_param);
+
+/*
+*    Free the allocated memory
+*/
+void FreeSystem(struct system *sys);
 
 
 
