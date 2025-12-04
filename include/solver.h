@@ -1,12 +1,14 @@
 #ifndef SOLVER_H_INCLUDED
 #define SOLVER_H_INCLUDED
 
-#include "dynamics.h"
-
+/**********************************************************/
+/*                       ERROR CODES                      */
+/**********************************************************/
 #define SOLVER_OK 0
 #define SOLVER_DIM_ERR -1 // Dimension provided is <= 0
 #define SOLVER_MEM_ERR -2 // Memory allocation failed
 
+#include "dynamics.h"
 
 struct RK4Solver
 {
@@ -33,7 +35,7 @@ struct RK4Solver
 *    Return -1 if dim is negative
 *    Return -2 if allocation failed
 */
-struct RK4Solver* InitializeSolver(const short dim);
+struct RK4Solver* InitializeSolver(const short dim, short *ErrorMsg);
 
 /*
 *    Free the allocated memory
