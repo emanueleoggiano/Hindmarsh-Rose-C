@@ -61,4 +61,34 @@ struct RK4Solver* InitializeSolver(const short dim, short *ErrorMsg) {
 *    Free the allocated memory
 */
 void FreeSolver(struct RK4Solver *solver) {
+
+    if(solver == NULL) return;
+
+    if(solver->k1 != NULL) {
+        free(solver->k1);
+        solver->k1 = NULL;
+    }
+
+    if(solver->k2 != NULL) {
+        free(solver->k2);
+        solver->k2 = NULL;
+    }
+
+    if(solver->k3 != NULL) {
+        free(solver->k3);
+        solver->k3 = NULL;
+    }
+
+    if(solver->k4 != NULL) {
+        free(solver->k4);
+        solver->k4 = NULL;
+    }
+
+    if(solver->stateBuffer != NULL) {
+        free(solver->stateBuffer);
+        solver->stateBuffer = NULL;
+    }
+
+    free(solver);
+
 }
