@@ -63,5 +63,4 @@ void FreeSolver(struct RK4Solver *solver);
 *    for a single time step
 */
 short RK4Step(struct system *sys, struct RK4Solver *solver, double dt,
-             double (*SystemFunction)(struct system*, double*),
-             short *ErrorMsg);
+             double (*SystemFunction)(struct system*, double*));
