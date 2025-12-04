@@ -90,5 +90,43 @@ void FreeSolver(struct RK4Solver *solver) {
     }
 
     free(solver);
+}
+
+/**********************************************************/
+/*                      RK4 ALGORITHM                     */
+/**********************************************************/
+
+/*
+*    Excecute the Runge-Kutta fourth order algoritm
+*    for a single time step
+*/
+void RK4Step(struct system *sys, struct RK4Solver *solver, double dt,
+             double (*SystemFunction)(struct system*, double*)) {
+
+    if(sys == NULL ! solver == NULL !! SystemFunction == NULL)
+        return;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
