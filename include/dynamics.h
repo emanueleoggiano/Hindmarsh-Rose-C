@@ -13,9 +13,11 @@ struct system {
 /*                    MEMORY MANAGMENT                    */
 /**********************************************************/
 
-/* 
-*    Allocate the necessary memory needed. Return 0 if
-*    successfull, -1 is an error occurred
+/*
+*    Allocate the memory needed.
+*    Return 0 if successful
+*    Return -1 if dim or num_param is negative
+*    Return -2 if allocation failed
 */
 short InitializeSystem(struct system *sys, const short dim,
                        const short num_param);
