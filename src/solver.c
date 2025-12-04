@@ -12,6 +12,11 @@
 */
 struct RK4Solver* InitializeSolver(const short dim, short *ErrorMsg) {
     
+    if(dim <= 0) {
+        if(ErrorMsg != NULL) *ErrorMsg = SOLVER_DIM_ERR;
+        return NULL;
+    }
+
     struct Rk4Solver *solver = (RK4Solver*) malloc(sizeof(RK4Solver));
 
     if(solver == NULL) {
@@ -41,6 +46,8 @@ struct RK4Solver* InitializeSolver(const short dim, short *ErrorMsg) {
     if(!solver->k1 || !solver->k2 || !solver->k3 || !solver->k4 ||
         !solver->stateBuffer) {
         
+        FreeSolver(solver);
+
         if(ErrorMsg != NULL) *ErrorMsg = SOLVER_MEM_ERR;
         return NULL;
     }
@@ -48,4 +55,10 @@ struct RK4Solver* InitializeSolver(const short dim, short *ErrorMsg) {
     // Everything is ok
     if(ErrorMsg != NULL) *ErrorMsg = SOLVER_OK;
     return solver;
+}
+
+/*
+*    Free the allocated memory
+*/
+void FreeSolver(struct RK4Solver *solver) {
 }
