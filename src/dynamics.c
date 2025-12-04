@@ -25,17 +25,7 @@ short InitializeSystem(struct system *sys, const short dim,
     // Check for allocation errors
     if(sys->state == NULL || sys->params == NULL)
     {
-        // Security checks in order to avoid memory leaks
-        if(sys->state != NULL)
-        {
-            free(sys->state);
-            sys->state = NULL;
-        }
-        if(sys->params != NUll)
-        {
-            free(sys->params);
-            sys->params = NULL;
-        }
+        FreeSystem(sys);
         return -2;
     }
     return 0; // No errors found
