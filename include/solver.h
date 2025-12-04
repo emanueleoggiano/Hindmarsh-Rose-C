@@ -3,6 +3,11 @@
 
 #include "dynamics.h"
 
+#define SOLVER_OK 0
+#define SOLVER_DIM_ERR -1 // Dimension provided is <= 0
+#define SOLVER_MEM_ERR -2 // Memory allocation failed
+
+
 struct RK4Solver
 {
     // RK4 parameters
