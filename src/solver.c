@@ -7,8 +7,8 @@
 /*
 *    Allocate the memory needed to initialize the solver.
 *    Return NULL if the creation of the solver failed
-*
-*
+*    Return SOLVER_DIM_ERR if dimension is <= 0
+*    Return SOLVER_MEM_ERR if allocation failed
 */
 struct RK4Solver* InitializeSolver(const short dim, short *ErrorMsg) {
     
