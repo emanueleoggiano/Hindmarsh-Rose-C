@@ -26,8 +26,13 @@ SOFTWARE.
 #ifndef DYNAMICS_H_INCLUDED
 #define DYNAMICS_H_INCLUDED
 
+// System parameters
 #define SYS_DIM 3
 #define FXD_PARAM 7
+
+// Error Codes
+#define SYS_NULL_ERR -1
+#define SYS_BAD_ALLOC -2
 
 struct model {
     double state[SYS_DIM];
