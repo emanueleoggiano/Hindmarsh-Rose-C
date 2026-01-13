@@ -1,0 +1,14 @@
+# --- Compiled files and objects ---
+*.o
+*.obj
+*.out
+*.exe
+*.so
+*.dylib
+
+.DS_Store
+
+# --- Output of the model ---
+*.dat
+*.csv
+*.txt
